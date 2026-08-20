@@ -51,6 +51,9 @@
   justify-content: center;
   transition: opacity 0.5s ease;
 }
+.mySlides {
+	display: none;
+}
 .modal-content {
   position: relative;
   width: 300px;
@@ -144,7 +147,7 @@ font-family: Arial, Helvetica, sans-serif;}
 <p>Pick a character:</p>
 <div id="imageDiv">
 <ul>
-<li><img src="20260817_115304(1).jpg" onclick="openModal('modal1', 'Louis')";/></li>
+<li><div class="mySlides fade"><img src="20260817_115304(1).jpg" onclick="openModal('modal1', 'Louis')";/></div></li>
 <li><img src="20260817_140642(1).jpg" onclick="openModal('modal2', 'Aaron');"/></li>
 <li><img src="20260818_161251(1).jpg" onclick="openModal('modal3', 'Jaden');"/></li>
 <li><img src="20260818_165520(1).jpg" onclick="openModal('modal4', 'Ophelia');"/></li>
