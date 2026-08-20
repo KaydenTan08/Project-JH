@@ -38,7 +38,7 @@
 	background-color:orange;
 	margin:auto;
 }
-.prev,
+.previous,
 .next {
   cursor: pointer;
   position: absolute;
@@ -77,6 +77,12 @@
   display: table;
   clear: both;
 }
+* {
+   box-sizing: border-box;
+}
+img {
+   vertical-align: middle;
+}
 .modal-content {
   position: relative;
   width: 300px;
@@ -86,12 +92,6 @@
   border-radius: 5px;
   overflow: hidden;
   animation: zoomIn 0.5s;
-}
-.caption-container {
-  text-align: center;
-  background-color: #222;
-  padding: 2px 16px;
-  color: white;
 }
 .column {
   float: left;
@@ -143,6 +143,50 @@ p{
   text-align: center;
   color: #ffffff;
   font-size: 24px;
+}
+.mySlides {
+  display: none;
+}
+.cursor {
+  cursor: pointer;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.numtext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
 }
 body {
 	font-family: Arial, Helvetica, sans-serif;
@@ -239,50 +283,84 @@ font-family: Arial, Helvetica, sans-serif;}
 	  <img src="" class="modal-content">
 	  <div class="caption"></div>
   </div>
-<p>Slideshow: </p>
+<h2 style="text-align:center">Slideshow Gallery</h2>
+
 <div class="myContainer">
   <div class="slides">
-	  <img src="20260817_115304(1).jpg" style="width:100%">
+    <div class="numtext">1 / 18</div>
+    <img src="20260817_115304(1).jpg" style="width:100%">
   </div>
+
   <div class="slides">
-	  <img src="20260817_140642(1).jpg" style="width:100%">
-  <div class="slides">
-	  <img src="20260818_161251(1).jpg" style="width:100%">
+    <div class="numtext">2 / 18</div>
+    <img src="20260817_140642(1).jpg" style="width:100%">
   </div>
+
   <div class="slides">
-	  <img src="20260818_165520(1).jpg" style="width:100%">
+    <div class="numtext">3 / 18</div>
+    <img src="20260818_161251(1).jpg" style="width:100%">
   </div>
-<a class="previous" onclick="plusSlides(-1)">&lt;</a>
-<a class="next" onclick="plusSlides(1)">&gt;</a>
+    
+  <div class="slides">
+    <div class="numtext">4 / 18</div>
+    <img src="20260818_165520(1).jpg" style="width:100%">
+  </div>
+
+  <div class="slides">
+    <div class="numtext">5 / 18</div>
+    <img src="WhatsApp Image 2026-08-20 at 10.50.55 AM.jpeg" style="width:100%">
+  </div>
+    
+  <div class="slides">
+    <div class="numtext">6 / 18</div>
+    <img src="" style="width:100%">
+  </div>
+    
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
   <div class="caption-container">
-	<p id="caption"></p>
+    <p id="caption"></p>
   </div>
-</div>
-<div class="row">
-	<div class="column">
-		<img class="demo-cursor" src="20260817_115304(1).jpg" style="width:100%" onclick="currentSlide(1)" alt="Louis">
-	</div>
-	<div class="column">
-		<img class="demo-cursor" src="20260817_140642(1).jpg" style="width:100%" onclick="currentSlide(2)" alt="Aaron">
-	</div>
-	<div class="column">
-		<img class="demo-cursor" src="20260818_161251(1).jpg" style="width:100%" onclick="currentSlide(3)" alt="Jaden">
-	</div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="20260817_115304(1).jpg" style="width:100%" onclick="currentSlide(1)" alt="Louis">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="20260817_140642(1).jpg" style="width:100%" onclick="currentSlide(2)" alt="Aaron">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="20260818_161251(1).jpg" style="width:100%" onclick="currentSlide(3)" alt="Jaden">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="20260818_165520(1).jpg" style="width:100%" onclick="currentSlide(4)" alt="Ophelia">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="WhatsApp Image 2026-08-20 at 10.50.55 AM.jpeg" style="width:100%" onclick="currentSlide(5)" alt="Gad">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="" style="width:100%" onclick="currentSlide(6)" alt="Sheng Kai">
+    </div>
+  </div>
 </div>
 <script>
 let slideIndex = 1;
-showSlides (slideIndex);
+showSlides(slideIndex);
 
 function plusSlides(n) {
-   showSlides(slideIndex += n);
+  showSlides(slideIndex += n);
 }
+
 function currentSlide(n) {
   showSlides(slideIndex = n);
 }
+
 function showSlides(n) {
   let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
+  let slides = document.getElementsByClassName("slides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
