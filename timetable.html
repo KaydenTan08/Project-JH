@@ -22,7 +22,11 @@
 
 <style type="text/css">
 
-
+header {
+     width: 100%;
+	 height: 48px;
+	 background-color: #ddd;
+}
 
 #gold-text {
        color: #FFD700 !important;
@@ -31,10 +35,175 @@
        color: #FFD700 !important;
 	}
 
-
+html,
 body {
 	background-color:lightgray;
 	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	height: 100%
+}
+ol {
+	list-style: none;
+}
+.tt {
+	display: flex;
+	background: #ecf0f1;
+	color: #444;
+}
+.timings {
+	margin: 1em 0 0 0;
+	padding: 0 3px 0 0;
+	width: 3em;
+	height: 68em;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: space-around;
+}
+.wk {
+	margin: 0;
+	display: -webkit-flex;
+	display: flex;
+	overflow-x: auto;
+	padding: 0;
+	width: 100%;
+}
+.day {
+	position: relative;
+	border-bottom: 1px solid #ddd;
+	padding: 0;
+	min-width: calc(100.5% / 3);
+	transition: min-width 0.2s ease-in-out;
+}
+.name {
+	display: block;
+	height: 3em;
+	line-height: 3em;
+	text-align: center;
+}
+.hour {
+	position: absolute;
+	height: 4em;
+	text-indent: 3px;
+	width: 100%;
+	color: white;
+}
+/* .hour_08 becomes .hour_67 */
+.hour_67 {
+	top: 3em;
+}
+/* .hour_09 becomes .hour_167 */
+.hour_167 {
+	top: 7em;
+}
+/* .hour_10 becomes .hour_267 */
+.hour_267 {
+	top: 11em;
+}
+/* .hour_11 becomes .hour_367 */
+.hour_367 {
+	top: 15em;
+}
+/* .hour_12 becomes .hour_69 */
+.hour_69 {
+	top: 19em;
+}
+/* .hour_13 becomes .hour_667 */
+.hour_667 {
+	top: 23em;
+}
+/* .hour_14 becomes .hour_767 */
+.hour_767 {
+	top: 27em;
+}
+/* .hour_15 becomes .hour_867 */
+.hour_867 {
+	top: 31em;
+}
+/* .hour_16 becomes .hour_967 */
+.hour_967 {
+	top: 35em;
+}
+.hour--six {
+	height: 8em;
+}
+.hour--seven {
+	height: 12em;
+}
+.class1 {
+	background: #3498db;
+}
+.class2 {
+	background: #27ae60;
+}
+.class3 {
+	background: #e74c3c;
+}
+.class4 {
+	background: #e67e22;
+}
+.class5 {
+	background: #1abc9c;
+}
+@media (min-width: 768px) {
+	.tt {
+		flex-direction: column;
+	}
+	.timings {
+		margin: 0;
+		padding: 0 0 3px 3%;
+		width: 96%;
+		height: 3em;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.name {
+		width: 4%;
+		line-height: 5em;
+		height: 5em;
+	}
+	.wk {
+		flex-direction: column;
+	}
+    .hour {
+		top: 0;
+		width: 6%;
+		height: 100%;
+	}
+	.hour_67 {
+		left: 4%;
+	}
+	.hour_167 {
+		left: 10%;
+	}
+	.hour_267 {
+		left: 16%;
+	}
+	.hour_367 {
+		left: 22%;
+	}
+	.hour_69 {
+		left: 28%;
+	}
+	.hour_667 {
+		left: 34%;
+	}
+	.hour_767 {
+		left: 40%;
+	}
+	.hour_867 {
+		left: 46%;
+	}
+	.hour_967 {
+		left: 52%;
+	}
+	.hour--six {
+		width: 12%;
+	}
+	.hour--seven {
+		width: 18%;
+	}
 }
 li
 {text-align: center;
@@ -79,6 +248,9 @@ p {text-align:center;}
           </div>
         </div>
       </nav>
+	<header>
+		
+	</header>
      <section class="tt">
 		 <ol class="timings">
 			 <li><time datetime="08:00">8:00 AM</time></li>
@@ -96,10 +268,15 @@ p {text-align:center;}
 		 <ol class="wk">
 			 <li class="day">
 				 <span class="name">MON</span>
-				 <div class="">
+				 <div class="hour hour_267 class1">
 					 <div class="title">MATHEMATICS</div>
 					 <div>TUT01</div>
 					 <div>SHERLY</div>
+				 </div>
+				 <div class="hour hour_69 class2">
+					 <div class="title">SCIENCE</div>
+					 <div>PRA01</div>
+					 <div>SOOTB</div>
 				 </div>
 		 
 </body>
