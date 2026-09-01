@@ -84,6 +84,39 @@ ol {
 	min-width: calc(100.5% / 3);
 	transition: min-width 0.2s ease-in-out;
 }
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+	position: relative;
+	background-color: #fefefe;
+	margin: auto;
+	padding: 0;
+	border: 1px solid #888;
+	width: 80%;
+	-webkit-animation-name: animatetop;
+	-webkit-animation-duration: 0.4s;
+	animation-name: animatetop;
+	animation-duration: 0.4s;
+}
+@-webkit-keyframes animatetop {
+	from {top: -300px; opacity: 0}
+	to {top: 0; opacity: 1}
+}
+@keyframes animatetop {
+	from {top: -300px; opacity: 0}
+	to {top: 0; opacity: 1}
+}
 .name {
 	display: block;
 	height: 3em;
@@ -96,6 +129,26 @@ ol {
 	text-indent: 3px;
 	width: 100%;
 	color: white;
+}
+.close {
+	color: #FFD700;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+.close:hover,
+.close:focus {
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+}
+.modal-header {
+	padding: 2px 16px;
+	background-color: #0275d8;
+	color: #FFD700;
+}
+.modal-body {
+	padding: 2px 16px;
 }
 /* .hour_08 becomes .hour_67 */
 .hour_67 {
@@ -354,9 +407,22 @@ p {text-align:center;}
 			 </li>
 			 <li class="day">
 				 <span class="name">FRI</span>
-				 <div class="hour hour_167 class7">
+				 <div class="hour hour_167 class7" id="myButton">
 					 <div class="title">ENG</div>
 					 <div>SHAN</div>
+					 <div id="myModal" class="modal">
+						 <div class="modal-content">
+							 <div class="modal-header">
+								 <span class="close">&times;</span>
+								 <h2>Subject Info</h2>
+							 </div>
+							 <div class="modal-body">
+								 <p>Subject: English Language</p>
+								 <p>Teacher: Ms Shantay</p>
+								 <p>Time: 8 AM to 9 AM</p>
+								 <p>Duration: 1 hour</p>
+							 </div>
+					 </div>
 				 </div>
 				 <div class="hour hour_367 class2">
 					 <div class="title">CHEM</div>
@@ -372,6 +438,22 @@ p {text-align:center;}
 				 </div>
 			 </li>
 			 
-<p>Source: <a href="https://codepen.io/likai/pen/NrqXLm">CodePen</a></p>		 
+<p>Source: <a href="https://codepen.io/likai/pen/NrqXLm">CodePen</a></p>
+<script>
+var modal = document.getElementbyId("myModal");
+var button = document.getElementbyId("myButton");
+var span = document.getElementbyClassName("close")[0];
+button.onclick = function() {
+	modal.style.display = "block";
+}
+span.onclick = function() {
+	modal.style.display = "none";
+}
+window.onclick = function(event) {
+	if (event.target == modal) {
+		modal.style.display = "none";
+	}
+}
+</script>
 </body>
 </html>
