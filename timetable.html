@@ -424,7 +424,7 @@ p {text-align:center;}
 					 <div>NANCY</div>
 				 </div>
 			 </li>
-			 <button id="myBtn">Open</button>
+			 <button id="myButton">Open</button>
 			 <div id="myModal" class="modal">
 						 <div class="modal-content">
 							 <div class="modal-header">
@@ -441,8 +441,8 @@ p {text-align:center;}
 			  </div> 
 <p>Source: <a href="https://codepen.io/likai/pen/NrqXLm">CodePen</a></p>
 <script>
-var modal = document.getElementbyId("myModal");
-var btn = document.getElementbyId("myBtn");
+var modal = document.getElementById("myModal");
+var button = document.getElementById("myButton");
 var span = document.getElementbyClassName("close")[0];
 btn.onclick = function() {
 	modal.style.display = "block";
