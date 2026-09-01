@@ -131,7 +131,7 @@ ol {
 	width: 100%;
 	color: white;
 }
-.close, .close2 {
+.close {
 	color: #FFD700;
 	float: right;
 	font-size: 28px;
@@ -439,10 +439,10 @@ p {text-align:center;}
 							 </div>
 						 </div>
 			  </div> 
-			 <div id="myModal2" class="modal">
+			  <div id="myModal2" class="modal">
 						 <div class="modal-content">
 							 <div class="modal-header">
-								 <span class="close2">&times;</span>
+								 <span class="close">&times;</span>
 								 <h2>Subject Info</h2>
 							 </div>
 							 <div class="modal-body">
@@ -452,7 +452,7 @@ p {text-align:center;}
 								 <p>Duration: 1 hour</p>
 							 </div>
 						 </div>
-			  </div> 
+			   </div> 
 <p>Source: <a href="https://codepen.io/likai/pen/NrqXLm">CodePen</a></p>
 <script>
 var modal = document.getElementById("myModal");
@@ -462,7 +462,6 @@ var btn = document.getElementById("myBtn");
 var btn2 = document.getElementById("myBtn2");
 
 var span = document.getElementsByClassName("close")[0];
-var span = document.getElementsByClassName("close2")[0];
 
 btn.onclick = function() {
 	modal.style.display = "block";
